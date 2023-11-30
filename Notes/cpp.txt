@@ -81,3 +81,17 @@ another difference b/w member function and friend function is member function ca
 
 making other member's function as friend to other class , Member class, Forward declaration etc, watch video 27 of code with harry c++ playlist
 https://www.youtube.com/watch?v=Tk-4KUoatg8&list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL&index=27&ab_channel=CodeWithHarry
+
+Constructors
+if you don't make any constructor then compiler will make 2 constructors by default in all the classes
+one is default constructor which takes no any argument
+another is copy constructor which only does shallow copy
+
+now if you have only one variable inside class which you want to set while creating object
+then 
+Student s(9); is same as Student S=9;
+s(9) is same as s=9 only during the declaration line 
+if after declaration of s object you assing then assignment operator will get invoked which ofcourse you've not defined in your class so it will lead to error
+
+member function of class can access any member of class whether it's public or private or protected 
+hence if we've two object o1 and o2 then o1's method can also access all varibales of o2 also because they both belongs to same class only
