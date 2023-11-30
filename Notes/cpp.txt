@@ -3,3 +3,34 @@ that's why classes are invented
 classes can have variables as well as methods and bydefault all members of class are private hence it's better with respect to security of the data
 
 only static members of class get's initialized to default values in C++, all other non staic variables don't get initialized hence they will always have garbage value
+
+class Employee{
+  static int count;
+}
+
+int Employee::count=1111;
+
+so static variable's you need to write at two places inside class also using static keyword you need to write
+and outside class also after defining class , you need again declare to write with class name and now no need to write static keyword here
+this is how compiler will under stand that this is static variable of class and it will by default ititialize it with 0, if you don't initialize it
+static vars can't get initialized inside class you've to initialize it outside class only 
+
+que: how to share data across the objects of single class?
+ans: ofcourse by making static variables
+because static variables can be accessed by all the objects of class, all object's can read same data using static variable
+
+that's why non static methods can access static variables because It's a class variable hence without using object name directly that variable can be accessed
+But
+static method can't access non static variables 
+it has 2 reasons
+1) static members exist even before making object of class hence when you call static method using class name which is accessing non static vars ofcourse it will give error
+bcoz no any object exist hence no any non static vars exist at this point of time
+2) another reason is , suppose there are three objects of class x ,y,z and now using class name you are calling static method and try to access some variable i
+static void fun(){
+  i++;
+}
+now which i is this? is this i belogs to x or y or z? that compiler won't be able to understand that's why this will also give error 
+because i exist 3 times bcoz it's not a static 
+hence non static function can access static members
+but 
+static member's can't access non static members
