@@ -34,3 +34,47 @@ because i exist 3 times bcoz it's not a static
 hence non static function can access static members
 but 
 static member's can't access non static members
+
+
+class Complex(){
+  int a,b;
+  public:
+    void setNumber(int x,int Y);
+    friend Complex addNumber(Complex O1,Complex O2);
+}
+void Complex::setNumber(int x,int y){
+   a=x,b=y;
+}
+
+Complex addNumber(Complex O1, Complex O2){
+  Complex O3;
+  O3.setNumber(O1.a+O2.a , O1.b+O2.b);
+  return O3;
+}
+
+int main (){
+  Complex O1,O2;
+  O1.setNumber(2,3);
+  O2.setNumber(3,5);
+  O3.
+
+}
+
+friend function are used to access private members of any class 
+when we want to perform operation using private members of more than one class then we can declare a function as friend to both those classes 
+same function can be friend of many classes
+friend function is separate entity it's not member of any class
+classes are just making that function as their friend. by declaring any function as friend in any classes all the private member of that class can be access through that function
+
+you can see the difference when you defining both function above
+when you are defining class member function you have to use Class name and scope resolution operator 
+but while defining friend function no need to use class name because friend function is not member of any class it's just friend of class 
+
+you can declare friend function in public as well as private both the section, even if you declare any friend function as private , nothing will change in implementation still you can access it outside simply
+nothng will change because friend function is not member of class hence declare in public or private doesn't makes any difference
+
+another difference in friend function and in member function is in member function you can directly access a , b vars w/o using obj name
+but in friend function you can't access vars w/o object name you have to use object and membership operator  like obj.a obj.b
+because if you only write b then whose b is this? is this O1's b or O2's b , hence compiler will get confused
+
+another difference b/w member function and friend function is member function can be called using obj.setNumber() only but friend function is not member of any class hence no need of obj.function_name
