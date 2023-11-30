@@ -1,0 +1,5 @@
+by default members of structure are public and inside structures you can have only variables you can't have methods
+that's why classes are invented
+classes can have variables as well as methods and bydefault all members of class are private hence it's better with respect to security of the data
+
+only static members of class get's initialized to default values in C++, all other non staic variables don't get initialized hence they will always have garbage value
