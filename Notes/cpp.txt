@@ -6,7 +6,7 @@ only static members of class get's initialized to default values in C++, all oth
 
 class Employee{
   static int count;
-}
+};
 
 int Employee::count=1111;
 
@@ -41,7 +41,7 @@ class Complex(){
   public:
     void setNumber(int x,int Y);
     friend Complex addNumber(Complex O1,Complex O2);
-}
+};
 void Complex::setNumber(int x,int y){
    a=x,b=y;
 }
@@ -50,7 +50,7 @@ Complex addNumber(Complex O1, Complex O2){
   Complex O3;
   O3.setNumber(O1.a+O2.a , O1.b+O2.b);
   return O3;
-}
+};
 
 int main (){
   Complex O1,O2;
