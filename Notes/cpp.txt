@@ -78,3 +78,6 @@ but in friend function you can't access vars w/o object name you have to use obj
 because if you only write b then whose b is this? is this O1's b or O2's b , hence compiler will get confused
 
 another difference b/w member function and friend function is member function can be called using obj.setNumber() only but friend function is not member of any class hence no need of obj.function_name
+
+making other member's function as friend to other class , Member class, Forward declaration etc, watch video 27 of code with harry c++ playlist
+https://www.youtube.com/watch?v=Tk-4KUoatg8&list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL&index=27&ab_channel=CodeWithHarry
