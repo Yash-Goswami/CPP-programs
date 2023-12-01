@@ -147,3 +147,15 @@ this obj is object which we used while making copy constructor
 so now obj=E2 is same as obj(E2) this means again copy construcotr will be called for obj 
 and this way it will lead to call back hell hence to avoid it we have to use reference variable
 
+Destructor:
+class Number(){
+  public :
+    ~Number(){
+
+    }
+}
+
+Destructor deoesn't takes any parameters, hence only one destructor is possible hence there's no overloading possible for destructor
+
+constructor overloading is possible because parameterized constructor are possible
+so, any class can have multiple constructors but only one destructor is possible
