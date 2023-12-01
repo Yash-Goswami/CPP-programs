@@ -53,10 +53,10 @@ Complex addNumber(Complex O1, Complex O2){
 };
 
 int main (){
-  Complex O1,O2;
+  Complex O1,O2,O3;
   O1.setNumber(2,3);
   O2.setNumber(3,5);
-  O3.
+  o3=addNumber(o1,o2);
 
 }
 
@@ -95,3 +95,12 @@ if after declaration of s object you assing then assignment operator will get in
 
 member function of class can access any member of class whether it's public or private or protected 
 hence if we've two object o1 and o2 then o1's method can also access all varibales of o2 also because they both belongs to same class only
+
+Dynamic memory allocation
+int *ptr = new int;       //for single variable
+int *ptr1 = new int[n];    //for array of size n
+
+for freeup the dynamically allocated memory
+delete ptr; //for deleting memory pointed by ptr
+delete[] ptr1;  //if ptr1 is pointing to an array then you've to tell compiler that you need to free up entire array hence here square brackets [] are required along with delete keyword 
+
