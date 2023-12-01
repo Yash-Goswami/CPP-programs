@@ -104,3 +104,46 @@ for freeup the dynamically allocated memory
 delete ptr; //for deleting memory pointed by ptr
 delete[] ptr1;  //if ptr1 is pointing to an array then you've to tell compiler that you need to free up entire array hence here square brackets [] are required along with delete keyword 
 
+when you don't create any constructor , compiler will create default constructor which will not take any parameter
+but when you create even single constructor now compiler will not create default constructor
+and if your constructor which you've created is parameterized constructor then while creating objects you've to 
+pass those parameter , now simply you can't create object like
+Student s; // this will lead to an error that no matching function 
+because now there's no any default parameterless constructor exists , if you want to resolve this error and you still want to create normal parameter less objects then you have to create one more default constructor along with your parameterized constructor
+
+class Student{
+  string name;
+  int id;
+  public:
+  Student(){}
+  Student(int id){
+    this->id=id;
+  }
+};
+//deep copy constructor
+class Employee{
+    int size;
+    int *Ptr;
+    public:
+      Employee(Employee &obj){   //think on this why here we have to use reference variable
+         size=obj.size;
+         ptr=new int[size];
+         for(int i=0;i<size;i++){
+            ptr[i]=obj.ptr[i];
+         }
+      }
+};
+
+Employee E1;
+Employee E2(E1); => this is same as Employee E2=E1; // both syntax will call copy constructor only
+
+but if you write in next line like this,
+Employee E2;
+E2=E1; then now = operaotr of class Employee will get called , and if you've not defined it then you have to overload = operaotr for your class
+
+now, while making copy constructor why we used reference variable and why we did not used normal variable?
+because when you write Employee E2(E1); then internally it will implement at copy constructor as obj=E2
+this obj is object which we used while making copy constructor
+so now obj=E2 is same as obj(E2) this means again copy construcotr will be called for obj 
+and this way it will lead to call back hell hence to avoid it we have to use reference variable
+
