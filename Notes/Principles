@@ -1,0 +1,2 @@
+DRY : Don't Repeat yourself (tamari jaat ne repeat no thava dyo means don't rewrite the same code which you've already written somewhere instead use that code only again and again)
+  Ex: inheritance is example of DRY principle where we are re-using paren't code in child classes instead of entirely re-writting the entire code 
