@@ -159,3 +159,66 @@ Destructor deoesn't takes any parameters, hence only one destructor is possible 
 
 constructor overloading is possible because parameterized constructor are possible
 so, any class can have multiple constructors but only one destructor is possible
+
+
+inheritance
+class child : visibility_mode parent1,parent2.......
+{
+};
+
+by default visibility mode is private if you don't mention any visibility mode
+
+class Base{
+  public :
+    int fun(){
+      cout<<"Base";
+    }
+};
+
+class Derieved : public Base{
+    public:
+};
+
+int main(){
+  Derived obj;
+  obj.fun(); //here when you create object then at compile time everything is known to compiler that how many things does 
+            //obj has. obj will have all the properties of itself + all the public and protected properties of parent
+            //BUT
+  Derived *ptr=new Base()://BUT when you create pointer
+  ptr->fun();    //here it will give error because ptr is of base class and base class doesn't have fun() function
+  // why does it gave error ? because pointer is not like object which has all the information , pointer is just a variable
+ //just a simple variable which can hold address that's it , it doesn't have any other information that what that class has
+//what parent of that class has , pointer only knows one thing that it can store address 
+//now you are creating object of parent using new and then you are assigning it to ptr but that's dynamic object and it will get created at run time and not at compile time , at compile time compiler only knows that ptr is of type Derived class
+and if it has fun() then it will bind it at compile time otherwise it will give error because at compile time compiler doesn't know what's inside ptr and what ptr will be pointing to at run time 
+
+//hence when you create object then it will go to parent and try to find function if it's not present in base class
+//but if you create ptr then it won't be able to go to parent to find if function present of not at compile time
+}
+
+Diamond problem and Virtual Base class
+    A
+B        C
+    D
+B and C both are inheriting A
+D has two parent class B and C 
+now if A has some property let's say A has variable x 
+so it will be inherited in B and C both 
+now when D tries to access x then which x to access ? B.x or C.x ? that's the ambiguity and that's called diamond problem
+and it's solution is virtual base class 
+
+when you inherit A in B and C then declare A as virtual base class so that whenever any class inherit's B and C both like D
+then A's property will only be reflect once in D
+
+syntax:
+class B : virtual public A            //virtual public or public virtual both we can write 
+{
+};
+
+class C : virtual public A
+{
+};
+
+class D : public class B,class C
+{
+};
