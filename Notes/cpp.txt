@@ -222,3 +222,49 @@ class C : virtual public A
 class D : public class B,class C
 {
 };
+
+Initializer list
+class Test{
+  int a;
+  int b;
+  public:
+
+  Test(int i,int j):a(i) , b(j){   //so, this is the initialization section , using this also you can initialize variables
+    //constructor body
+  }
+}
+
+at line no. 232 we can try below things
+Test(int i,int j):a(i) , b(i+j)
+Test(int i,int j):a(2*i) , b(i+j)
+Test(int i,int j):a(i) , b(a+j) //since we've declared a first and then b inside class hence a will get initialized first with i and then when compiler will go to initialize b then a's value will be available
+BUT
+Test(int i,int j):a(b+i) , b(j) //here compiler will first go to initialize a and at this point of time b's value is not available hence b has garbage value at this point of time hence garbage+i = garbage => so, a will be initialized with garbage value 
+
+Test(int i,int j): b(j),a(b+i) // even you write b , before the a still a will get initialized first and then only b will get initialized hence here also b will have j's value but a will have garbage value
+
+
+//constructor's calling order /execution order 
+class Derived : public Base1 , public Base2
+{
+  int x,y;
+  public:
+  Derived(int a, int b, int c , int d) : Base2(d),Base1(c)
+  {x=a,y=b}
+
+}
+
+whatever order you call at 252 line but still Base1(c) constructor will be executed first and then only Base2(d) will be executed because that's the order in which you've inherited at 248 line
+so, the order in which you inherit in that order only constructors will get executed
+
+BUT there's one exception with virtual base class , if any of your parent is virtual then irrespective of wherever you've written , virtual base class's constructor will always execute first
+
+class Derived : public Base1 , public virtual Base2
+{
+  int x,y;
+  public:
+  Derived(int a, int b, int c , int d) : Base1(d),Base2(c)
+  {x=a,y=b}
+
+}
+//although you are calling Base2's constructor after Base1's constructor but still Base2() constructor will be executed first becasue virtual base class is given highest priority
