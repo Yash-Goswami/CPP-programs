@@ -271,3 +271,5 @@ class Derived : public Base1 , public virtual Base2
 
 this pointer and how to return object which is calling It's funtion using this pointer watch video below
 https://www.youtube.com/watch?v=cEOfK_L4gGA&list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL&index=53&ab_channel=CodeWithHarry
+
+video 55 https://www.youtube.com/watch?v=0YQ_yhX46uk&list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL&index=55&ab_channel=CodeWithHarry
