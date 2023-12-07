@@ -273,3 +273,40 @@ this pointer and how to return object which is calling It's funtion using this p
 https://www.youtube.com/watch?v=cEOfK_L4gGA&list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL&index=53&ab_channel=CodeWithHarry
 
 video 55 https://www.youtube.com/watch?v=0YQ_yhX46uk&list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL&index=55&ab_channel=CodeWithHarry
+
+
+pointer of base class can point to object of derived class
+but 
+pointer of derived class cann't point to object of object of base class
+
+A virtual function cannot be global or static because, by definition, a virtual function is a member function of a base class and relies on a specific object to determine which implementation of the function is called.
+
+Constructor can not be virtual, because when constructor of a class is executed there is no vtable in the memory, means no virtual pointer defined yet. Hence the constructor should always be non-virtual.
+
+pure virtual function
+virtual int fun()=0; //it's having no body
+
+Destructor can be virtual so that we can override the destructor of base class in derived
+
+if a pointer points to a base class, but the pointer points at runtime to a derived class, then the base class must have a virtual destructor in order to destruct the derived class.
+
+template class syntax
+
+template<class T1 , class T2>
+class vector{
+  T1 a;
+  T2 b;
+  public:
+    vector(T1 x,T2 y){
+      a=x,b=y;
+    }
+
+    void display(){
+      cout<<a<<b;
+    }
+}
+
+int main(){
+  vector<int float> v(1,3.14)
+  v.display();
+}
