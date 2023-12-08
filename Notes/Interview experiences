@@ -1,0 +1,84 @@
+try catch (forgot to recape)
+exception and their types and exception handling
+basic software engineering understanding
+like even after our platform and customer's platform is same still why they face defects and how you will track and how you will approach them
+
+static type casting and dynamic type casting
+how many types of casting are there in c++
+
+design pattern's  factory , abstract , observer
+
+smart pointers
+
+is there any other way to optimize the costliest operation of the vector , when size becomes equal to capacity so , at that time
+new array of double the size get's created  and then copies occurs , is there any way to optimize this costly operation
+(evu kai hot to pachhi already implement karelu j hot ne bhai, so there was no meaning of that question but interviewer wanted
+to know how can I think , whether I can come up with any new approach or not)
+
+class A{};
+whether it will give any error?
+I said yes it will give error because classes are meant to have data , but this doesn't have any data so it will give error
+but I tried in online compiler , it is not giving any error it executes successfully
+
+hack: whenever interviewer ask any syntactical question and I'm not aware of it then first think and still if not able to figure 
+out then say that it dependes on compiler to compiler , how compiler is built to handle this situation based on it
+some compiler may give error and some compiler may not give error
+
+java has garbage collector but c++ doesn't have garbage collector
+how to detect memory leak in your c++ program ,
+write a code to detect memory leak in c++
+using smart pointer it can be done
+
+chat gpt gave below solution which uses unordered_map and I also gave same ans in interview
+#include <iostream>
+#include <unordered_map>
+
+// Global map to track allocations and deallocations
+std::unordered_map<void*, size_t> memoryMap;
+
+// Overloaded global new operator
+void* operator new(size_t size) {
+    void* ptr = malloc(size);
+    memoryMap[ptr] = size;
+    return ptr;
+}
+
+// Overloaded global delete operator
+void operator delete(void* ptr) noexcept {
+    auto it = memoryMap.find(ptr);
+    if (it != memoryMap.end()) {
+        std::cout << "Deleting " << it->second << " bytes at address " << ptr << std::endl;
+        free(ptr);
+        memoryMap.erase(it);
+    } else {
+        // Handle attempting to delete non-allocated memory
+        std::cerr << "Attempted to delete non-allocated memory at address " << ptr << std::endl;
+    }
+}
+
+// Function to simulate memory leaks
+void simulateMemoryLeak() {
+    int* dynamicInt = new int;
+    // Uncomment the next line to simulate not freeing the allocated memory
+    // delete dynamicInt;
+}
+
+int main() {
+    simulateMemoryLeak();
+
+    // Report remaining allocated memory at the end of the program
+    for (const auto& entry : memoryMap) {
+        std::cerr << "Memory leak: " << entry.second << " bytes at address " << entry.first << std::endl;
+    }
+
+    return 0;
+}
+
+then he asked about writing scema for sql which was very very easy but I did not know sql syntax , this happened with me 
+second time
+in digite infotech , mumbai ma pan mane sql no bov j easy question puchhyo but since I was not aware of sql syntax or forgot
+I didn't answered, aaya pan bov j easy question hato but sql table banava kem e j notu aavdtu 
+sql and plsql to aavdvu j joie
+
+but overall maja aavi ho interview devama pan , to pachhi backend ma j focus kar ne bhai maja aavti hoy to e j kar ne aakho 
+aaya bilkul maja nathi aavti javascript and react ma to pachhi e j karo ne jya maja aave 
