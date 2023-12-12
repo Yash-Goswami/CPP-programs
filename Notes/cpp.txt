@@ -338,3 +338,9 @@ Object of any class, whether userdefined or predefined , will always be pass by 
 
 hence reverse function should use string as reference
 void reverse(string &str,int start, int end)
+
+
+-------
+for any char ch;
+to convert lower case to upper case => 'A' + ch-'a' 
+to conver upper case to lower case =>'a' + ch - 'A'
