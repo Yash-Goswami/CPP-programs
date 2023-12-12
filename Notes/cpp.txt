@@ -310,3 +310,31 @@ int main(){
   vector<int float> v(1,3.14)
   v.display();
 }
+
+
+--------------
+in recursion problems always always focus first on solving problem ,till now I was directly jumping on writing base condition and that's why recursion was feeling hard, bro never ever think on base condition , first solve the problem
+first write original solution and then dry run your solution on smaller test casses and then you will automatically realize where to stop , means it will automatically give you idea base condition , if you directly jump on base condition then you will not able to get the idea and you will end up wasting lot's of time in interview or in OA
+
+void reverse(string str,int start,int end)
+{
+  if(start>=end) return;
+
+  swap(str[start],str[end]);
+  return reverse(str,start+1,end-1); //in this line never pass start++ or end-- =>because first start and end will be //passed and then post increment or decrement will be evaluated so, it will give you TLE , instead you can use ++start, 
+//--end
+}
+
+int main (){
+  string str="xyzw";
+  reverse(str,0,str.size()-1); 
+}
+
+there's very big mistake in above program , can you guess???????????
+
+yes, only in case of arrays , addresses will be pass but here it's string class and str is not array it's object of some class (it's OBJECT , AND NOT AN ARRAY) , although internal implemenation is based on array only but outside it's object
+and object never passed using reference or using addresses,
+Object of any class, whether userdefined or predefined , will always be pass by value ,never pass by reference
+
+hence reverse function should use string as reference
+void reverse(string &str,int start, int end)
