@@ -344,3 +344,23 @@ void reverse(string &str,int start, int end)
 for any char ch;
 to convert lower case to upper case => 'A' + ch-'a' 
 to conver upper case to lower case =>'a' + ch - 'A'
+-----------
+
+finding lowerbound=finding ceil of a number in sorted array = finding insert position of a number 
+all above question has same solution
+finding lowerbound   is also same as fidning upper bound the only difference is you don't need to return element even if it present , so, instead of <= use < in codition writing 
+while(left<=right)
+{
+  mid= left + right-left/2;
+  if(target<=arr[mid])
+    right=mid-1;
+else 
+  left=mid+1;
+}
+return left;
+
+for finding floor of a number in a given sorted array use >= in above function
+
+so, lower bound , upperbound, floor , cieling , insert position , first occurence, last occurence of a number all these question use same program only, using same lowerbound code or just by doing <= to < or to >= all these problems can be solved 
+
+lower and upper words are looking opposite to each other but here in programming context  , meaning of both are not opposite but both has same meaning only
