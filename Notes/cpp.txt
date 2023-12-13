@@ -364,3 +364,31 @@ for finding floor of a number in a given sorted array use >= in above function
 so, lower bound , upperbound, floor , cieling , insert position , first occurence, last occurence of a number all these question use same program only, using same lowerbound code or just by doing <= to < or to >= all these problems can be solved 
 
 lower and upper words are looking opposite to each other but here in programming context  , meaning of both are not opposite but both has same meaning only
+lower_bound means index of element which is >= target
+upper_bound means index of element which is > target
+
+now during online assessment , we shouldn't write entire code for it , instead we have algorithms provided in stl so use them
+
+ int gfg[] = { 5, 5, 5, 6, 6, 6, 7, 7 };
+ 
+vector<int> v(gfg, gfg + 8); // 5 5 5 6 6 6 7 7
+
+vector<int>::iterator lower, upper;
+lower = lower_bound(v.begin(), v.end(), 6); // these functions return iterators (pointers) and not the element
+upper = upper_bound(v.begin(), v.end(), 6); // hence you need to subtract begin() iterator from ans to get index
+
+cout << "lower_bound for 6 at index "
+     << (lower - v.begin()) << '\n';
+cout << "upper_bound for 6 at index "
+     << (upper - v.begin()) << '\n';
+
+same with array also
+lb_index = lower_bound(arr, arr+n , target) - arr ; // to get index we must subtract first address means arr
+up_index = upper_bound(arr, arr+n , target) - arr ; // to get index we must subtract first address means arr
+
+while finding first and last occurences of a number edge cases you need to keep in mind that what if number is not present at all in the array, and that time also 3 cases can occur 
+number is smaller then the first element of array (so right pointer will become -1 at the end)
+number is greater then larget number of array ( so left will become N(size of array )) 
+number is smaller then some element and bigger then some element of array but not present in array(so here left and right will be inside the range only but they will not point to correct ans bcoz number is not present in array) 
+
+once you find first and last occurences of a number , then another problem which you can solve is find the frequency of a number in sorted array, or cound number of occurence of given target in sorted array in (log base 2 N) time
