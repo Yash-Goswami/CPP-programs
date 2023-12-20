@@ -399,3 +399,23 @@ but why only few are failing then , it might not be that your logic is wrong , b
 https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1
 
 So, It's not that you are not able to think , or logic nahi lagana aata, my logic was entirely unique and no one had that logic , and my logic was correct only but the only thing was silly mistake that if input is long long then how can I take temp array as int only bro ?? so, be aware of these kind of situation
+
+
+
+______________________
+I did mistake in interview 
+they asked me clearly that there are only small brackets () -> means there were only one kind of brackets then which data structure you will use inorder to check whether given string of parenthesis is valid or not?
+here I said I'll use stack and that's where I was rejected 
+when there is only one kind of brackets then you don't need to maintain them in any data structure you just need to maintain open and close brackets count 
+whenever there's open bracket do open++
+wherever there's close bracket then do open-- and this time check that open is not going -ve 
+if there 's one open bracket but 2 close bracket then 
+()) -> open++ open-- open-- ->so open will become -1 so, whenever open will become -ve that means string is not balanced(parentheses are not balanced) 
+so on every close bracket you need to do open-- and then check that It's not gone to -ve if it goes to -ve then immediately break the loop
+
+now after comming out of loop if you come out loop without reaching at the end of string then return false
+if you've scanned entire string and came out then check that open==0 => count of open bracket's must be 0 at the end of entire string 
+if(open==0)return true;
+else return false;
+
+that's it , you only need single variable to to check whether paranthesis are balanced or now when there's only one kind of brackets present, but if there's more than one kind of brackets present, i.e. if even 2 kind of brackets are present then definately you'll need stack to track whether ( bracket came last or { came last , whoever came last corresponding closing bracket must come 
