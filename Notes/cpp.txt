@@ -392,3 +392,10 @@ number is greater then larget number of array ( so left will become N(size of ar
 number is smaller then some element and bigger then some element of array but not present in array(so here left and right will be inside the range only but they will not point to correct ans bcoz number is not present in array) 
 
 once you find first and last occurences of a number , then another problem which you can solve is find the frequency of a number in sorted array, or cound number of occurence of given target in sorted array in (log base 2 N) time
+
+
+whenever you are confident that your code is 100% correct only and if it is passing 100s of test cases but failing only few test cases then how can my solution be wrong , it is already passing 100s of similar test cases
+but why only few are failing then , it might not be that your logic is wrong , but your logic is correct only but somewhere if your input is very big but you've taken small container that's why your ans is failing for few test cases like in count inversions question input array was containing long long array but to store temperory arays I took only int array and because of this my 100 test cases passed only 17 was failing and I doubted on myself , so that's why all googlers were saying never doubt yourself keep doing untill you placed, so I kept doing Untill I reached to the successfull acceptance of that question
+https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1
+
+So, It's not that you are not able to think , or logic nahi lagana aata, my logic was entirely unique and no one had that logic , and my logic was correct only but the only thing was silly mistake that if input is long long then how can I take temp array as int only bro ?? so, be aware of these kind of situation
