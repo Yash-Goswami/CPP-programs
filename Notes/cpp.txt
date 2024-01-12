@@ -60,7 +60,7 @@ int main (){
 
 }
 
-friend function are used to access private members of any class 
+friend function are used to access private members of any class (or many classes)
 when we want to perform operation using private members of more than one class then we can declare a function as friend to both those classes 
 same function can be friend of many classes
 friend function is separate entity it's not member of any class
