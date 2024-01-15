@@ -1,0 +1,7 @@
+Object is an entity that has state(attributes) and behaviour.
+Anything which exist in real world / physical world is object.
+
+Class is just a blue print which says how my object will look like, class doesn't exist in physical world.
+
+Women is a class bcoz it doesn't exist in real world, 
+but neeta , gita , Himani , Jeel are objects , bcoz they do exist in real world.
