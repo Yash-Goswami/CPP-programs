@@ -5,3 +5,15 @@ Class is just a blue print which says how my object will look like, class doesn'
 
 Women is a class bcoz it doesn't exist in real world, 
 but neeta , gita , Himani , Jeel are objects , bcoz they do exist in real world.
+
+in C++ Empty classes also give's 1 byte when we create object of them
+class Empty{};
+
+int main()
+{
+    Empty A,B;
+    cout<<sizeof A <<" "<<sizeof B; 
+    //o/p : 1   1 
+
+    return 0;
+}
