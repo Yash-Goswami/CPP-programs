@@ -17,3 +17,6 @@ int main()
 
     return 0;
 }
+
+Even though an empty class seems like it should have zero size, the C++ standard mandates that objects of any class must have a size greater than zero. This is to ensure that each object has a unique address.
+The reason for this is due to the uniqueness requirement of object addresses in C++. Even though an empty class has no data members, the compiler ensures that each object of that class has a distinct address. Therefore, it assigns a non-zero size to ensure uniqueness.
