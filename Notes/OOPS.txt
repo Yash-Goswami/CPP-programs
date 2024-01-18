@@ -35,3 +35,26 @@ if we create default constructor then compiler will still create 1 constructor i
 if we create both default and copy constructor then now compiler will not going to create any constructor 
 
 default constructor means , the constructor which doesn't take  take any argument 
+
+for all the classes(for all the user defined data types) by default assingment operator is overloaded into class
+
+class Student{
+ string name;
+ int age;
+ char grade;
+ Student(string name, int age, char grade){
+    this->name=name;
+    this->age = age;
+    this->grade=grade;
+ }
+};
+
+int main(){
+    Student S1("Yash,24,'A');
+    Student S2;
+    S2=S1;// this line will perfactly work and copy all data of S1 to S2
+
+    //means by default although userdefined data types have different meaning for = operator still = is working fine means
+  // compiler will be by default overloading = operator
+
+}
