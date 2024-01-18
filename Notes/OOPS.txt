@@ -27,3 +27,11 @@ If an empty class had a size of 0 bytes, then two different objects of the same 
 watch second half of the below video
 https://www.youtube.com/watch?v=iw1Xf_33YM0&ab_channel=CoderArmy
 It's very very very important to watch it bcoz things discussed in this video is nowhere else present and no one has discussed it till now hence It's very important to watch it
+
+
+Constructor
+if we don't create any constructor then compiler will create 2 constructor default and copy constructor
+if we create default constructor then compiler will still create 1 constructor i.e. copy constructor but now it won't create default constructor
+if we create both default and copy constructor then now compiler will not going to create any constructor 
+
+default constructor means , the constructor which doesn't take  take any argument 
