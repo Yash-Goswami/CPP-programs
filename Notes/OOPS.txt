@@ -58,3 +58,8 @@ int main(){
   // compiler will be by default overloading = operator
 
 }
+
+Default destructor deosn't release dynamically allocated memory , means default constroctor can't prevent memory leak
+you have to create your own destructor to prevent memory leak
+
+Default destructor just do only one thing-> it just call destructor of parent class that's it
