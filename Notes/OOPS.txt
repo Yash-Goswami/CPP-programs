@@ -63,3 +63,51 @@ Default destructor deosn't release dynamically allocated memory , means default 
 you have to create your own destructor to prevent memory leak
 
 Default destructor just do only one thing-> it just call destructor of parent class that's it
+
+
+--------------------------------------------
+class Programmer{
+    static int count;
+    int ObjectNumber;
+    
+    public:
+    Programmer(){
+        ObjectNumber=++count;
+        cout<<"Object "<<ObjectNumber<<" constructed"<<endl;
+    }
+    ~Programmer(){
+        cout<<endl<<"Object "<<ObjectNumber<<" destructed";
+    }
+};
+
+int Programmer::count;
+
+int main()
+{   
+    Programmer O1,O2,O3;
+    Programmer *O4=new Programmer();
+    return 0;
+}
+output:
+Object 1 constructed
+Object 2 constructed
+Object 3 constructed
+Object 4 constructed
+
+Object 3 destructed
+Object 2 destructed
+Object 1 destructed
+
+->three things to notice here 
+1] constructors of the object are called in the order in which you are creating object
+2] but destructor of the objects called in the reverse order, means the object you created first destroyed last, and the object you created last was destroyed first
+3]destructor of the dynamically created object doesn't get's called and leads to memory leak
+    however program execution completed but still It's destructor doesn't got called 
+   so you have to use-> delete O4; then only It's memory will release , or destructor of O4 will be called
+
+Why destructors are called in reverse Order ✅✅
+This is because the objects are created in a Stack which follows the LIFO order, so when one object gets out of the stack, its destructor gets called. Also, the intuition behind this LIFO order is that, one object can be dependent of other object in case of copy constructor.
+
+Eg: for Customer A4(A3), suppose A3 contains one dynamically allocated data, it means that A4 is dependent on A3.
+Now, if A3 is destroyed first, then that heap memory is also going to be destroyed and A4 will not have any data to point to.
+
