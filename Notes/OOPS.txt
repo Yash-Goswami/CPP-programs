@@ -36,7 +36,7 @@ if we create both default and copy constructor then now compiler will not going 
 
 default constructor means , the constructor which doesn't take  take any argument 
 
-for all the classes(for all the user defined data types) by default assingment operator is overloaded into class
+for all the classes(for all the user defined data types) by default assingment operator(=) is overloaded into class
 
 class Student{
  string name;
