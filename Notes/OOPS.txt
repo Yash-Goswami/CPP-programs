@@ -111,3 +111,58 @@ This is because the objects are created in a Stack which follows the LIFO order,
 Eg: for Customer A4(A3), suppose A3 contains one dynamically allocated data, it means that A4 is dependent on A3.
 Now, if A3 is destroyed first, then that heap memory is also going to be destroyed and A4 will not have any data to point to.
 
+
+--------------------------------
+What is difference between Encapsulation and Abstraction?
+
+Encapsulation means binding objects properties(variables) and behaviour(methods) together at one place and after that making variables private and to access them defining public method like setters and getters this is called encapsulation of the data.
+
+class Student{
+    int age;
+    int rollNum;
+    int pin;
+public:
+    void setAge(int age){
+        if(age>0 && age<100)
+            this->age=age;
+        else 
+            cout<<"Invalid Age";
+    }
+
+    int getAge(int pin){
+        if(this->pin==pin)
+            return age;
+        else
+            cout<<"wrong password";
+    }
+
+    //similarly setRollNum and getRollNum can be defined conditionally like this
+};
+
+so above is the exaple of Encapsulation , no one can directly access Student's property(vars) and can't set any random values to age or roll number
+if your age and rollNum are public then any one can set any wrong value to the age 
+
+Student Amit;
+Amit.age = -50;
+
+So, this is violating Encapsulation property that's why difining all the vars as private is very important so that no one can randomly access and set garbage values to our precious data, and to set the age we need to provide It's public methods and there we need to have all the validations so, that only proper data goes to the data
+
+here to get the data also you first need to provide your password , if password and username something like that matches then only you will get correct age otherwise you will get error
+so, these things called Encapsulation
+
+Encapsulation: defining all vars as private and providing public method to access them so that no one can directly access vars , and only using their proper method , someone can accesss the data and that also if they provide correct information to setters and getters then only
+
+Abstraction means just providing relavent data to user and hiding all the actual implementation to user
+(here user are those who are coders only, and using our methods or our class created by someone else )
+end user just wants to call those methods and doesn't want to know how they are implemented actually behind the seen
+
+pow(x,r)
+in power function when you give 2 and 5 then it will give you 32 , so, user will just know how to use this method that's it , user doesn't know how actually 2 power 5 is getting calculated
+
+sort(v.begin(),v.end())
+user will give array to sort function and get the array sorted that's it user will not able to see which sorting algorithm is implemented inside sort fuction all those code inside sort fuction user doen't wants to know user just wants to use that function and get his work done
+
+we are using many library function to get the substring, to get the toUpper, toLower all those are example of Abstraction, Actual implementation of those function are hidden from us because we don't want to know how they are implemented , we just want to use them and wants to done our work that's it.
+
+So, hiding the actual implementation(unneccessary details) from the end user and just providing usefull information to user that's Abstraction.
+
