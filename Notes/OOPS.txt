@@ -185,3 +185,5 @@ and for derived classes it behaves as public bcoz derived clases can use them fo
 
 so, using protected re-usability also ensured and for external code, encapsulaiton also ensured bcoz protected code works as private for all the external code.
 
+ek tir se 2 nishan
+protected -> ensures re-usability + encapsulation
