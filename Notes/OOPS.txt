@@ -166,3 +166,22 @@ we are using many library function to get the substring, to get the toUpper, toL
 
 So, hiding the actual implementation(unneccessary details) from the end user and just providing usefull information to user that's Abstraction.
 
+Inheritance: is all about re-using the already available code and avoiding re-writing same code again and again 
+that can be achived by creating base class and derived classes
+all the property present in base class can be re-used in derived class insted of re-writing them
+
+private we knows that we use it so that no one from outside can access them and set random values to vars
+public we use so that using publically available methods external code can set or get values of vars using some proper mechanism only instead of randomly accessing anything 
+
+so, using private and public we achieved encapsulation
+but what is the need of protected?
+
+protected members only can be accessed by derived classes and outsider's still can't access them
+after encapsulation we were in need of code reusability and for that purpose if we can't use private members bcoz they can't be accessed outside class and we also can't use public members to define vars bcoz otherwise randomly any one can change any value and where -ve values are not expected there also someone can set -ve values , 
+
+so, to implement code reusability , protected access specifier was invented
+protected members are behave as private for external code, bcoz other's can't access it 
+and for derived classes it behaves as public bcoz derived clases can use them for code re-usability
+
+so, using protected re-usability also ensured and for external code, encapsulaiton also ensured bcoz protected code works as private for all the external code.
+
