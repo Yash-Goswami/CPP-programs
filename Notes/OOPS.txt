@@ -187,3 +187,83 @@ so, using protected re-usability also ensured and for external code, encapsulait
 
 ek tir se 2 nishan
 protected -> ensures re-usability + encapsulation
+
+types of inheritance
+1) single 
+class A
+class B : access_modifies A
+
+2) multi level
+class A 
+class B : access_modifies  A
+class C : access_modifies  B
+
+here if all 3 classes have fun() function and we create object of C 
+C obj;
+obj.fun(); -> which fun() will be called?
+
+compiler always see what type of object it is , obj is of type C hence first it will go and find fun() in C only if it finds there then it will execute C::fun() , if class C doesn't have fun() then only it will go to it's parent and try to find fun(), now if B has fun then it will execute B::fun() and if C and B both doesn't have fun() then only it will go in A and try to find A::fun(), when all 3 class doesn't have then it will give error
+
+3) multiple
+class A 
+class B 
+class C : access_modifies  A, access_modifier B   -> if both access_modifiers are same then it can also be written as => class C : access_modifier A,B
+
+here constructor calling order is C then A then B hence A first will execute then B and at last C will execute 
+class C : public A , public B
+{
+C(): A(),B()    // this way compiler writes it in the same order you inherit them
+};
+
+hence constructor execution order is A,B ,C but what will be order of execution of destructor?
+destructor will always execute in reverse order then the constructor always always remember it
+hence Destructor's execution order will be C,B,A
+
+if you change order of inheritance then
+class C: access_modifier B,A
+then execution order of 
+constructor order B,A,C
+destructor order  C,A,B
+
+
+Multiple inheritance means multiple parents
+
+4) hierarchical -> means multiple child
+class A
+class B : access_modifier  A
+class C : access_modifier  A
+
+5)hybrid (also called multipath)
+it's combination of two or more of above 4 types of inheritance
+
+class A
+class B : access_modifier  A
+class C : access_modifier  A
+class D : access_modifiere B,C
+
+so this is also called multipath inheritance bcoz all the properties of A will be inherited to D via multiple paths  
+A->B->D and 
+A->C->D
+which will cause Diamond problem because for any property calling for D which is also present in A , for all such properties compiler will get confused
+
+one way to solve it is you specify that which property you want to access  suppose A has age then while using age in D use obj.B::age or obj.C::age now compiler won't be confused
+but this is implementatin dependent , some compiler supports it and give's the correct o/p and doesn't give error , but some compiler doesn't support it and give's ambiguity error I have seen that some compiler gives error some doens't give error
+
+hence the best and correct way to resolve this error is to use virtual base class
+
+class A
+class B : access_modifier  virtual  A
+class C : access_modifier  virtual  A
+class D : access_modifiere B,C
+
+use of virtual keywork while inheriting A, ensures that only one copy of A will be present in D
+
+here you can write anything, 
+class B : public virtual A
+class B : virtual public A
+both are valid
+
+now in this hybrid inheritance what will be order of execution of the constructor and destructor?
+constructor execute in order = A,B,C,D
+destructor will ofc execute in exactly reverse order  = D,C,B,A
+
