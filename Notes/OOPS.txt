@@ -423,3 +423,6 @@ length*breadth called
 
 so, each and everytime you can't check that which kind of object I have and then I call method of that object only that's  why oops invented virtual , it will handle everything automatically
 
+child no object banavo tyare koi function call karo to if child doesn't have that function then compiler will go and check into it's parent 
+but jyare parent no object ke pointer banavo and parent ma e method present no hoy tyare compiler doesn't go and look into it's children's because at compile time next line's it doesn't able to see 
+parent class to aapde upar j lakhie and child class neiche lakhie ne and compiler can read from top to bottom line by line only so , compiler ne khabar nathi ke ketla class parent na child aavshe niche hence it also doesn't know ke aa parent vali mathod je aapde call karie chhie e child ma present pan hashe ke nahi that's why it won't go to child from parent , that's why to enable that direction at run time bcoz at runtime everything is known we need virtual keyword
