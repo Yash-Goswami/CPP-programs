@@ -166,6 +166,8 @@ we are using many library function to get the substring, to get the toUpper, toL
 
 So, hiding the actual implementation(unneccessary details) from the end user and just providing usefull information to user that's Abstraction.
 
+--------------------------
+
 Inheritance: is all about re-using the already available code and avoiding re-writing same code again and again 
 that can be achived by creating base class and derived classes
 all the property present in base class can be re-used in derived class insted of re-writing them
@@ -267,3 +269,41 @@ now in this hybrid inheritance what will be order of execution of the constructo
 constructor execute in order = A,B,C,D
 destructor will ofc execute in exactly reverse order  = D,C,B,A
 
+--------------
+Polymorphism
+why reference in operator overloading
+why private member was accessed in operator overloading
+why object created inside operator overloading was not deleted?
+why parent class pointer can point to child's object but not vise versa?
+
+class A{
+    public:void fun(){
+        cout<<"A"<<endl;
+    }
+};
+
+class B{
+    public:void fun(){
+        cout<<"B"<<endl;
+    }
+};
+
+class C: public A,B{
+    
+};
+int main()
+{
+    C obj;
+    obj.fun();
+    return 0;
+}
+
+o/p
+main.cpp:31:9: error: request for member ‘fun’ is ambiguous
+   31 |     obj.fun();
+      |         ^~~
+main.cpp:20:17: note: candidates are: ‘void B::fun()’
+   20 |     public:void fun(){
+      |                 ^~~
+main.cpp:14:17: note:                 ‘void A::fun()’
+   14 |     public:void fun(){
