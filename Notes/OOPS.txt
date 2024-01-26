@@ -270,12 +270,67 @@ constructor execute in order = A,B,C,D
 destructor will ofc execute in exactly reverse order  = D,C,B,A
 
 --------------
-Polymorphism
-why reference in operator overloading
-why private member was accessed in operator overloading
+Polymorphism: is of 2 type Compile time and Runtime
+when you don't write virtual keyword then compile time polymorphism occurs and when you write function in parent class with virtual keyword then Runtiem polymorphism ensures
+
+operator overloading
+class Complex{
+int real,imaginary;
+
+public:
+Complex(){} //default constructor, you have to make bcoz now compiler won't make
+Complex operator+(const Complex &obj){
+    Complex obj;
+    obj.real = this->real+obj->real;
+    obj.imaginary = this->imaginary+obj->imaginary;
+}
+
+};
+
+in operator overloding we've to pass args as pass by reference to avoid call back hell
+eventually using of reference and const vars are ofcourse give's better performance and provides security because when you use pass by reference then copies don't occur hence especially for larger objects since copies of values doesn't occur time will be saved and since we have used const keyword hence no one can modify original object
+
+why private member was accessed in operator overloading?
+you can see real and imaginary are private members of Complex class and still we are able to access other object's real and imaginary inside operator+ function for obj
+so, here one rule apllies that , a class can access any of private members of all it's objects
+
+so, obj is of type complex only hence we can acess other objects of complex class also inside the Complex class
+
+
 why object created inside operator overloading was not deleted?
+while returning it before function execution get's completes and that object get's destroyed , a copy of that object get's created and passed to the object wherever it was called 
+like in main()
+complex C3 = C1 + C2; 
+then copy of obj will be created and passed to C3 before everything get's destroyed
+
+
 why parent class pointer can point to child's object but not vise versa?
 
+Parent Pointer to Child Object:
+A parent class pointer can point to a child class object because:
+The child object contains all the members that the parent pointer expects to access.
+The pointer can access those shared members without issues.
+Animal* animalPtr = new Dog();  // Valid, Dog is a type of Animal
+
+ Child Pointer to Parent Object:
+A child class pointer cannot point to a parent class object because:
+The parent object might not have all the members that the child pointer expects to access.
+Trying to access members that only exist in the child class would lead to errors.
+C++
+Dog* dogPtr = new Animal();  // Invalid, Animal doesn't have Dog-specific members
+
+Real-Life Analogy:
+
+Imagine a Vehicle class (parent) and a Car class (child).
+A Vehicle pointer can point to a Car object because a Car is a type of Vehicle. It has all the essential features of a vehicle (wheels, engine, etc.).
+However, a Car pointer cannot point to a Vehicle object that's not specifically a Car. It might be a motorcycle or a boat, which don't have car-specific features like doors or a steering wheel.
+
+parent na badha members child ma to hovana j chhe etle parent no pointer jyare ena j members ne access karvani try kare using child't object tyare parent na to member ofc present chhe j child ma hence it can access them
+but jyare child no pointer banavo and ema parent no oject pass karo tyare j vaat lage ne bcoz child me je pan members chhe e parent ma chhe j nahi , etle child jyare ena j members ne access karvani try kare tyare error avshe bcoz object to parent no chhhe, jema e members j nathi present
+
+hence parent pointer can point to child object but child pointer can't point to parent object
+
+----------------------
 class A{
     public:void fun(){
         cout<<"A"<<endl;
@@ -307,3 +362,64 @@ main.cpp:20:17: note: candidates are: ‘void B::fun()’
       |                 ^~~
 main.cpp:14:17: note:                 ‘void A::fun()’
    14 |     public:void fun(){
+
+aaya multiple inheritance ma pan ambiguity ni error aave, evu nathi ke C ma jo fun no male to pela e A ma jai ne gotshe bcoz A pela inherit karyu chhe , na evu nathi , it will give ambiguity error that's why you can't keep shape class as child and triangle , square , circle as their parent to call area method of those class 
+that won't work
+
+you have to make shape class as parent class and make triangle , squre , circle as their children and you have to use virtual keyword in shape class for area function so, that dynamically it will call area method of that perticular class only which was passed to It's parent's pointer 
+
+---------------------
+why virtual is required , where you can directly make object of child class and call it's method , 
+when we have that easy way then why you are complicating the things and making parent's pointer and child ko point karvate ho , function ko virtual banate ho, why ??
+below code is the ans
+in real life project in industry we want below type of clear and concise and easy to understandable code 
+
+
+class Shape{
+    public:
+        virtual void findArea()=0;
+};
+
+class Circle : public Shape{
+    public:
+        void findArea(){
+            cout<<"3.14*radious*radious called"<<endl;
+        };
+};
+
+class Square : public Shape{
+    public:
+        void findArea(){
+            cout<<"length*breadth called"<<endl;
+        };
+};
+class Triangle : public Shape{
+    public:
+        void findArea(){
+            cout<<"sqrt([s × (s – a) × (s – b) × (s - c)]) called where s is half perimeter"<<endl;
+        };
+};
+
+int main()
+{
+    Shape *p;
+    vector<Shape*> plotsIown;
+    plotsIown.push_back(new Square() );//here you can pass args to their respective constructors by passing 1, 2 or 3 arg to circle ,square or triangle respectively
+    plotsIown.push_back(new Triangle() ); 
+    plotsIown.push_back(new Circle() );
+    plotsIown.push_back(new Square() );
+    
+    for(int i=0;i<plotsIown.size();i++)
+        plotsIown[i]->findArea();
+        
+    return 0;
+}
+o/p:
+
+length*breadth called
+sqrt([s × (s – a) × (s – b) × (s - c)]) called where s is half perimeter
+3.14*radious*radious called
+length*breadth called
+
+so, each and everytime you can't check that which kind of object I have and then I call method of that object only that's  why oops invented virtual , it will handle everything automatically
+
