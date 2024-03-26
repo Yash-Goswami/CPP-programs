@@ -419,3 +419,15 @@ if(open==0)return true;
 else return false;
 
 that's it , you only need single variable to to check whether paranthesis are balanced or now when there's only one kind of brackets present, but if there's more than one kind of brackets present, i.e. if even 2 kind of brackets are present then definately you'll need stack to track whether ( bracket came last or { came last , whoever came last corresponding closing bracket must come 
+
+
+Linked list:
+why it is advantage over array?
+bcoz in array we need to predefined size, hence either there will be shortage of space or some space we will ended up wasting if desired number of input we don't receive
+but 
+linked list is entirely flexible, we can use as much space only which we needs, jetli joie etlij use karva male bcoz we will make only required amount of nodes
+
+now interviewver will ask if static array is not flexible then why don't you use dynamic array? use array then , bcoz it's flexible
+
+then the ans is vector is flexible but not as much as linked list bcoz vector or dynamic array also get's created in Heap memory now if as of now vector has capacity of 8 and 8 elements are already present now if you want to insert just one more node then since arrays are always contiguous and vector always get's double in capacity whenever it overflows so, first it will go and find double size in heap , whether 16 space is available or not in heap then it will copy all old 8 elements here and then new element will be inserted , so this is also increasing time complexity as well as if in future we don't need remaining 7 space then it will be wasted but 
+if you are using linked list then in heap memory we will create just one extra node and immediately we will insert new element there and this will just take O(1) time only, and no any extra space will be wasted bcoz we are not alocating any extra space , so space wise also and time wise also linked list is flexible and more efficient that's why over array we needed linked list
