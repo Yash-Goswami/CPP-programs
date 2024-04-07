@@ -9,6 +9,8 @@ Find the capital and the name where the capital includes the name of the country
   SELECT capital,name
   FROM world
  WHERE capital like concat('%',name, '%')
+
+same as LIKE we also have NOT LIKE clause
 ------------------------------------------------
 The capital of Monaco is Monaco-Ville: this is the name Monaco and the extension is -Ville.
 
@@ -30,12 +32,78 @@ FROM world
 where name<>capital and LEFT(name,1)=LEFT(capital,1)
 
 ------------------------------------------------
+Find all details of the prize won by EUGENE O'NEILL
+
+SELECT *
+FROM nobel
+WHERE winner = 'EUGENE O''NEILL';
+
+In SQL, when you have a single quote within a string, you need to escape it by using another single quote. So, 'EUGENE O''NEILL' is used to represent the name "EUGENE O'NEILL".
 ------------------------------------------------
+Show the 1984 winners and subject ordered by subject and winner name; but list chemistry and physics last.
+SELECT winner, subject
+FROM nobel
+WHERE yr = 1984
+ORDER BY CASE 
+    WHEN subject IN ('Chemistry', 'Physics') THEN 2  -- Assign a higher sorting value for 'Chemistry' and 'Physics'
+    ELSE 1                                           -- Assign a lower sorting value for other subjects
+  END,
+  subject,                                            -- Sort by subject first
+  winner;                                             -- Sort by winner name
+
 ------------------------------------------------
+Show the countries where the population is greater than 5 times the average for its region
+SELECT name
+  FROM bbc b1
+ WHERE population> 
+  5*(SELECT AVG(population) FROM bbc
+     WHERE region=b1.region)
+  
 ------------------------------------------------
+sub query/nested queries we can write anywhere
+
+how the population of China as a multiple of the population of the United Kingdom
+
+SELECT
+ population/(SELECT population FROM world
+             WHERE name='United Kingdom')
+  FROM world
+WHERE name = 'China'
+
+like withing SELECT , with FROM or inside  WHERE  clause anywhere we can write nested qeury and use it's result anywhere we want
 ------------------------------------------------
+consider this DB 
+world(name, continent, area, population, gdp)
+write a sql query to List each continent and the name of the country that comes first alphabetically.
+
+SELECT continent, MIN(name) AS first_country
+FROM world
+GROUP BY continent;
+
 ------------------------------------------------
+Find the continents where all countries have a population <= 25000000. Then find the names of the countries associated with these continents. Show name, continent and population.
+
+SELECT name, continent, population
+FROM world
+WHERE continent IN (
+    SELECT continent
+    FROM world
+    GROUP BY continent
+    HAVING MAX(population) <= 25000000
+)
+ORDER BY continent, name;
+
 ------------------------------------------------
+Some countries have populations more than three times that of all of their neighbours (in the same continent). Give the countries and continents.
+SELECT w1.name AS country, w1.continent
+FROM world w1
+WHERE w1.population > 3 * (
+    SELECT MAX(w2.population)
+    FROM world w2
+    WHERE w2.continent = w1.continent
+      AND w2.name <> w1.name
+);
+
 ------------------------------------------------
 ------------------------------------------------
 ------------------------------------------------
