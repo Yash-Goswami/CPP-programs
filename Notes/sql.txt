@@ -116,6 +116,23 @@ The HAVING clause allows use to filter the groups which are displayed. The WHERE
 
 If a ORDER BY clause is included we can refer to columns by their position.
 ------------------------------------------------
+Show the years in which three prizes were given for Physics.
+
+nobel(yr, subject, winner)  
+
+select yr
+from nobel
+where subject='physics'
+group by yr
+having count(*)=3
+
+Show the year and subject where 3 prizes were given. Show only years 2000 onwards.
+
+select yr,subject
+from nobel
+where yr>=2000
+group by yr,subject
+having count(*)=3
 ------------------------------------------------
 ------------------------------------------------
 ------------------------------------------------
