@@ -441,3 +441,6 @@ copy the data in array/vector and now your question would become for an
 array, solve it.
 
 As you know, if any problem you can do using stack only then you can use recursion as well ( mostly )., means you can solve same problem with recursion as well
+
+
+in linked list questions if your code is failing to cover some edge cases then always edge cases will lie in either frist node or at last node , means around head or at end last node only at these 2 places edge cases lies in linked lists
