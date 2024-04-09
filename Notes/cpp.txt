@@ -434,8 +434,10 @@ if you are using linked list then in heap memory we will create just one extra n
 
 
 //////////////
-interview Tip to solve the questions
+interview Tips to solve the questions
 
 Every Linked List Problem, if you can't do it in LinkedList format,
 copy the data in array/vector and now your question would become for an 
 array, solve it.
+
+As you know, if any problem you can do using stack only then you can use recursion as well ( mostly )., means you can solve same problem with recursion as well
