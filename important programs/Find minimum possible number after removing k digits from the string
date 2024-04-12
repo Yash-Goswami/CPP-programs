@@ -1,0 +1,79 @@
+https://leetcode.com/problems/remove-k-digits/description/?envType=daily-question&envId=2024-04-11
+
+Example 1:
+
+Input: num = "1432219", k = 3
+Output: "1219"
+Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.
+
+Example 2:
+
+Input: num = "10200", k = 1
+Output: "200"
+Explanation: Remove the leading 1 and the number is 200. Note that the output must not contain leading zeroes.
+
+Example 3:
+
+Input: num = "10", k = 2
+Output: "0"
+Explanation: Remove all the digits from the number and it is left with nothing which is 0.
+
+suppose number is 19273649 and k is 4 , which digits you should be removing? ofcourse if bigger digit present at higher decimal places then we should remove it first but bigger means what ? with respect to whom current number is bigger? 
+one thing digit at any index will be from 0 to 9 only now at any index we need to decide whether we should remove it or not? 
+when can we remove it? only when current digit > next digit -> why? because that means current digit is at higher power of 10 and next digit is at lower power of 10 and since current digit is contributing more decimal value hence it's better to remove it instead of going to next digit for cheacking
+so first 9>2 so we will remove 9 
+
+so bigger in the sence if current digit is bigger then next digit then current digit should be removed becoz these kind of digits are contributing higher values to make the number bigger 
+now number is 1273649 -> similarly go ahead and 7>3 so remove 7 then 6>4 so remove 6 now number is 12349 
+once you complete loop then all the digits will be in non-decreasing order means in sorted order only it will be present
+ now if still k is left means suppose k was 6 after removing above 3 digits still k=3 is remaining so now what is good decision? now from where we should be removing numbers? ofcourse if you remove k numbers from front then remaining digits from back will ofcourse will have higher magnitude 
+if from 12349 you remove first 3 number then 49 will left they were biggest numbers so we should not remove from front if we want to make smallest possible number then we must remove now digits from back means remove 349 and final number will be 12 which is smallest
+
+now suppose number is 15732 now k=2 first 7>3 so we will remove 7 and then current index will point to 3 now don't go only in right direction we should also go back by one position to check that after removing current digit that is 7 if bigger digit then current (means  bigger than 3 ) is not present before 7 so for that reason go back and do i-- bcoz other wise you will ended up removing 3 bcoz 3>2 and final number will be 152 which is not the smallest you must go back and remove 5 bcoz 5>3 and final number will be 132 which is the smalles 
+
+string removeKdigits(string num, int k) {
+  if(k>=num.size()) return "0"; // if we need to remove all the digits from num then return "0"
+
+  int i=0;
+  while(k>0 && i<num.size()-1){       //
+    if(num[i]>num[i+1]){
+      num.erase(i,1);      //erase removes 1 digit from ith index  erase(i,x ) removes x digits starting from ith index
+      k--;
+      if(i>0) i--; //go back one position don't just simply move ahead
+    }
+    else{
+      i++; //since we are using while loop if you don't do i++ then it will become infinite loop and you will get TLE
+    }
+  }
+
+  //now all the digits will be in non-decreasing order if still k is >0 then remove k digits from back
+  if(k>0)
+    num.resize(num.size() - k);  //
+
+  //now there is possibility that number is 120011 like that so if k is 2 then from given number first 2>0 so 2 will be removed and then 1>0 so 1 will be removed 
+  // and remaining number is 0011 but 0011 is not what it needs it wants us to return 11 in this case hence we need to return all the leading 0's 
+  for(i=0;i<num.size() ; i++)
+    if(num[i]!=0)
+      break;
+
+  num.erase(0,i);
+
+  //now if number  is 100000 and k=1 then 0000 will left and after removing all 0's "" empty string will left and in this case they want us to return "0" instead of empty string 
+  return num.empty()? "0" : num; 
+  
+}
+
+so, this question had multiple edge cases which needs to be handled that's it baaki question is very simple
+
+
+
+
+
+
+
+
+
+
+
+
+
