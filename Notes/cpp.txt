@@ -448,3 +448,9 @@ in linked list questions if your code is failing to cover some edge cases then a
 
 In C++, you can compare two deque (double-ended queue) objects using the standard comparison operators such as ==, !=, <, <=, >, and >=, as long as the element type of the deque supports these operations.
 means if you need to only compare strings then use strings but you need to compare strings by adding chars at front and then you need to compare newstring with maximumvaluestring or minimumvalue string lexicographically then for adding a char at front takes O(N) time for string but in place of string if you use dequeue then it takes o(1) time only for push_front or push_back both operations + pop_front and pop_back also and why to use dequeue? bcoz same like strings you can compare dequeue also as == , < ,  > like all comparision operators
+
+
+to get min value in integers we take min=INT_MAX by default so that any value in integer array will be smaller then it and hence ultimately we will get min value in min variable
+
+but what if we want to compare strings? then what should be taken as defalt value for minstring? what can be the maximum lexicographically biggest string? it's nothing but the vertical bar 
+take minStr='|' bcoz it's ascii value is 124 and small 'z' has ascii value 122 hence vertical bar will have highest lexicographical value hence to compare with other strings we can use it
