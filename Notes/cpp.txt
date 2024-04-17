@@ -454,3 +454,7 @@ to get min value in integers we take min=INT_MAX by default so that any value in
 
 but what if we want to compare strings? then what should be taken as defalt value for minstring? what can be the maximum lexicographically biggest string? it's nothing but the vertical bar 
 take minStr='|' bcoz it's ascii value is 124 and small 'z' has ascii value 122 hence vertical bar will have highest lexicographical value hence to compare with other strings we can use it
+
+slow pointer and fast pointer approach for finding loop inside linked list
+for this interviever can ask proof for the solution that why does it work always ? 
+for providing proof , when slow pointer is at starting node of linkedlist at that time measure the distance between slow and fast pointer now in every iteration distance between slow and fast pointer will decrease by one and this way after some time you can say that distance will definately become 0 after sometime that's why this solution will definately work
