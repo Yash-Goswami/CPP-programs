@@ -489,3 +489,5 @@ so whenever you face such issue that first operation you have to do it without a
 }
 
 how beautifully it's handled and interviewer will also happy
+
+https://www.youtube.com/watch?v=RrmDZv1i9W8&ab_channel=CoderArmy ->great video on remove cycle from linked list if present , great explanation /maths behind o(1) space complexity
