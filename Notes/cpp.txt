@@ -458,3 +458,34 @@ take minStr='|' bcoz it's ascii value is 124 and small 'z' has ascii value 122 h
 slow pointer and fast pointer approach for finding loop inside linked list
 for this interviever can ask proof for the solution that why does it work always ? 
 for providing proof , when slow pointer is at starting node of linkedlist at that time measure the distance between slow and fast pointer now in every iteration distance between slow and fast pointer will decrease by one and this way after some time you can say that distance will definately become 0 after sometime that's why this solution will definately work
+
+importance of do...while loop
+to traverse circular linked list having no tail pointer or no extra dummy node to separate first and last node of the list I tried below code first 
+
+{
+  Node *curr=head;
+  if(curr)
+    cout<<curr->data<<" ";
+    curr=curr->next;
+
+  while(curr!=head){
+      cout<<curr->data<<" ";
+      curr=curr->next;
+  }
+}
+
+in above code you can see same code is repeating inside if block and while block as well which is not good practice as per the DRY principle but I had to do it bcoz to stop I need a condition curr!=head but if I directly use it then on the first node itself I'll come out of loop bcoz curr and head are pointing to same node only hence I had to print first node separately to move curr one point ahead now curr and head are not same 
+
+so whenever you face such issue that first operation you have to do it without any condition and rest operations you want to perform with some condition then at that time do while ko yaad karo which performs first operation unconditionally and DRY will also be satisfied
+
+{
+    if(!head)        return;
+        
+    Node * curr=head;
+    do{
+        cout<<curr->data<<" ";
+        curr=curr->next;
+    }while(curr!=head);
+}
+
+how beautifully it's handled and interviewer will also happy
