@@ -491,3 +491,7 @@ so whenever you face such issue that first operation you have to do it without a
 how beautifully it's handled and interviewer will also happy
 
 https://www.youtube.com/watch?v=RrmDZv1i9W8&ab_channel=CoderArmy ->great video on remove cycle from linked list if present , great explanation /maths behind o(1) space complexity
+
+
+one of the great logic and no one has done this question in just 2 loops in entire leetcode this guy's solution is just great but its' uses DP , DP is very good and very beautifully manages everything with very small code and very less traversal of matrix here everything is beeing done in just single traversal ,checkout below link
+https://leetcode.com/problems/find-all-groups-of-farmland/solutions/5049280/o-n-js-solution-2-for-loops-only/
