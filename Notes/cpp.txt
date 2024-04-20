@@ -432,6 +432,13 @@ now interviewver will ask if static array is not flexible then why don't you use
 then the ans is vector is flexible but not as much as linked list bcoz vector or dynamic array also get's created in Heap memory now if as of now vector has capacity of 8 and 8 elements are already present now if you want to insert just one more node then since arrays are always contiguous and vector always get's double in capacity whenever it overflows so, first it will go and find double size in heap , whether 16 space is available or not in heap then it will copy all old 8 elements here and then new element will be inserted , so this is also increasing time complexity as well as if in future we don't need remaining 7 space then it will be wasted but 
 if you are using linked list then in heap memory we will create just one extra node and immediately we will insert new element there and this will just take O(1) time only, and no any extra space will be wasted bcoz we are not alocating any extra space , so space wise also and time wise also linked list is flexible and more efficient that's why over array we needed linked list
 
+use of nested function in c++ 
+https://leetcode.com/problems/find-all-groups-of-farmland/solutions/5048269/beated-find-all-groups-of-farmland/
+benefit is if you use nested function then inner function has access to all the variables/data of outer function so, you don't need to pass all those data to that inner function  while calling it and still all those variables inner function can use
+
+but 
+
+when you don't use nested function and instead you define inner function outside the outer function then you need to pass all those data into arguments to use them in that outsider function and it will need copying all data there hence it will use more memory bcoz now both function uses diff diff variables and also it requires more execution time bcoz copying data from formal arguments to actual arguments also takes time
 
 //////////////
 interview Tips to solve the questions
