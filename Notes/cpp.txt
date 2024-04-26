@@ -502,3 +502,6 @@ https://www.youtube.com/watch?v=RrmDZv1i9W8&ab_channel=CoderArmy ->great video o
 
 one of the great logic and no one has done this question in just 2 loops in entire leetcode this guy's solution is just great but its' uses DP , DP is very good and very beautifully manages everything with very small code and very less traversal of matrix here everything is beeing done in just single traversal ,checkout below link
 https://leetcode.com/problems/find-all-groups-of-farmland/solutions/5049280/o-n-js-solution-2-for-loops-only/
+
+below is the question related to modular arithmatic , it is the example of mind blowing use of modular arithmatic
+https://www.geeksforgeeks.org/problems/multiply-two-linked-lists/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab
