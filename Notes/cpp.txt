@@ -514,3 +514,17 @@ https://www.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-
 -------------
 if you want to reverse the data in any data structure other than array , where you can't use two pointer technique then use stack to reverse them
 first push everything into stack now when you remove data from stack you will ofcourse get last in first out hence everything you will get in reverse order
+---------
+
+to check two numbers have same sign or diff diff sign dont use > and < operator like
+if( a>0 && b>0 || a<0 && b<0) then same sign 
+else diff diff sign
+this is very dumb way to compare whether sign of both element are same or not then what's smart way?  -> xor operation
+
+bool haveDifferentSigns(int a, int b) {
+    return (a ^ b) < 0;
+}
+
+if number is -ve then it's MSB will be set other wise unset
+if both number has same sign then MSB  of xor will be 0 means a^b will be positive 
+if both number has diff diff sign then MSB of xor will be 1 means a^b will be -ve 
