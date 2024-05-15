@@ -509,3 +509,8 @@ https://www.geeksforgeeks.org/problems/multiply-two-linked-lists/1?utm_source=ge
 clone of the linked list without any extra space and in linear time
 https://www.youtube.com/watch?v=pReLgYYYHJo&ab_channel=CoderArmy
 https://www.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1?utm_source=geeksforgeeks&utm_medium=article_practice_tab&utm_campaign=article_practice_tab
+
+
+-------------
+if you want to reverse the data in any data structure other than array , where you can't use two pointer technique then use stack to reverse them
+first push everything into stack now when you remove data from stack you will ofcourse get last in first out hence everything you will get in reverse order
