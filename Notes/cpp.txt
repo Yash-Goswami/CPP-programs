@@ -528,3 +528,7 @@ bool haveDifferentSigns(int a, int b) {
 if number is -ve then it's MSB will be set other wise unset
 if both number has same sign then MSB  of xor will be 0 means a^b will be positive 
 if both number has diff diff sign then MSB of xor will be 1 means a^b will be -ve 
+---------------
+extreamly beautiful question on tree
+https://leetcode.com/problems/distribute-coins-in-binary-tree/description/?envType=daily-question&envId=2024-05-18
+before seeing this question I was thinking that there will be many ways to traverse the tree which might be soo much complex and I don't know them, but after getting solution of this problem I was amused that there's nothing that I don't know . always remember that there's only 3 ways to traverse the tree inorder, preorder and post order and we always go inorder to solve any kind of tree quesiton so, never ever fear that there's something which I don't know. I know everything but just need to go one extra step that's it. keep on thinking on solution and you will definately get it.
