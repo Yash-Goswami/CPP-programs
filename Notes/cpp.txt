@@ -537,3 +537,8 @@ before seeing this question I was thinking that there will be many ways to trave
 ------------
 https://leetcode.com/problems/sum-of-all-subset-xor-totals/solutions/5181870/fastest-100-video-explanation-easy-to-understand/
 need to understand above logic
+
+-----------
+single pass solution and most effective solution
+https://leetcode.com/problems/longest-palindrome/solutions/5255189/easiest-solution-approach-c-java-python-javascript-beginner-friendly/
+
