@@ -1,0 +1,17 @@
+Why version control system is require? or why git is require?
+
+first of all if your code is somewhere in server instead of in your local machine then it's easier for the contributors of the code to contribute by going there, people can't come go to some local machine and keep standing on queue to submit their changes into the production
+
+then vcs is require bcoz it has all the history of your code so, in case new version is not stable then to revert back to the stable version vcs are very helpful, you can easily revert back to the better stable version .very quickly
+
+there are two type of vcs centralized and decentralized
+centralized means all your code is residing at single place , -> increases single point failure changes if that server down , then everything is gone,
+it's usefull when team size is smaller , then to perform changes quickly with team agreeing on all the changes being made with co-programming/ pair programming 
+with agreement of all the coders changes can be promoted fast
+
+decentralized-> when team is big
+->reduces single point of failure
+->increase scalability limits
+->increase server availability -> if one server down , other is up then also we can get the code any time
+
+BLOB-> binary large object => your files are present/processed as blob in git
