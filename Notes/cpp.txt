@@ -542,3 +542,6 @@ need to understand above logic
 single pass solution and most effective solution
 https://leetcode.com/problems/longest-palindrome/solutions/5255189/easiest-solution-approach-c-java-python-javascript-beginner-friendly/
 
+------------
+https://leetcode.com/problems/water-bottles/solutions/5432621/explanations-no-one-will-give-you-2-detailed-approaches-extremely-simple-and-effective/
+O(1) logic makes you baap coder
