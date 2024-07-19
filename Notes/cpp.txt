@@ -12,7 +12,7 @@ int Employee::count=1111;
 
 so static variable's you need to write at two places inside class also using static keyword you need to write
 and outside class also after defining class , you need again declare to write with class name and now no need to write static keyword here
-this is how compiler will under stand that this is static variable of class and it will by default ititialize it with 0, if you don't initialize it
+this is how compiler will understand that this is static variable of class and it will by default ititialize it with 0, if you don't initialize it
 static vars can't get initialized inside class you've to initialize it outside class only 
 
 que: how to share data across the objects of single class?
@@ -89,7 +89,7 @@ another is copy constructor which only does shallow copy
 
 now if you have only one variable inside class which you want to set while creating object
 then 
-Student s(9); is same as Student S=9;
+Student s(9); is same as Student s=9;
 s(9) is same as s=9 only during the declaration line 
 if after declaration of s object you assing then assignment operator will get invoked which ofcourse you've not defined in your class so it will lead to error
 
@@ -184,7 +184,7 @@ int main(){
   obj.fun(); //here when you create object then at compile time everything is known to compiler that how many things does 
             //obj has. obj will have all the properties of itself + all the public and protected properties of parent
             //BUT
-  Derived *ptr=new Base()://BUT when you create pointer
+  Derived *ptr=new Base();//BUT when you create pointer
   ptr->fun();    //here it will give error because ptr is of base class and base class doesn't have fun() function
   // why does it gave error ? because pointer is not like object which has all the information , pointer is just a variable
  //just a simple variable which can hold address that's it , it doesn't have any other information that what that class has
