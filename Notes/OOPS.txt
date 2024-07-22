@@ -431,3 +431,18 @@ File handling is way very easier than we were thinking ,whatever is required for
 https://www.youtube.com/watch?v=NBsmPHXjLfg&ab_channel=CoderArmy
 
 same way check coderArmy chanel for try and catch also , that's also very easy
+--------------------
+interface in c++ are nothing but the class having only pure virtual functions
+
+// Interface definition
+class PaymentMethod {
+public:
+    virtual void processPayment(double amount) = 0; // Pure virtual function
+    virtual void refund(double amount) = 0; // Pure virtual function
+    virtual ~PaymentMethod() {} // Virtual destructor
+};
+
+pure virtual function means virtual function having no body means assign function =0 means it doesn't have any implementation
+now who ever will extend this class has to define all the methods which are written in interface 
+
+basically interface is abstract class
