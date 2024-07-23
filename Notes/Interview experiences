@@ -82,3 +82,43 @@ sql and plsql to aavdvu j joie
 
 but overall maja aavi ho interview devama pan , to pachhi backend ma j focus kar ne bhai maja aavti hoy to e j kar ne aakho 
 aaya bilkul maja nathi aavti javascript and react ma to pachhi e j karo ne jya maja aave 
+
+
+
+
+
+-------------------------------------
+learnings from tcs interview 
+1] even for experienced they don't ask any dificult questions,     questions are really easy to answer
+2] mistake I did is just I didn't do revision
+    please do regular revision , w/o revision you can't crack any interview
+oops need revision, reglarly so have a better notes
+for stl I've best notes but do revision-> very silly mistake I did is just I didn't know how to use set very silly mistake, when you're goint home just take your notes with you and do revision a lots of revision is required 
+revision means regularly you need to check them
+very simple que they asked yaar, that just print unique chars , ignoring the case , using containers
+so , I use unordered map , as well as I used set but I just feared to use syntax s.find(x)!=s.end() bcoz i didn't do revision.
+
+3]another reason I missed is what is the ascii codes , it's completely fine no one can remember the ascii code you just needed to duplicate the online compiler and just needed to print the ascii code of lower 'a' and upper case 'A' that's it you can do it and get to know what's their ascii codes  and use it in your logic to convert upper case to lower case or vise versa , but I was in fear to even trying it and use it I was scared soo much , and interview was not that dificult but since I was soooooooo scared and nerves I just totaly screwed up the things , I simply did not even tried to understand what she is saying , what even interviewer is saying , so first of all stay calm , leave the nervesness , bcoz of which my mind was not working even for easy easy things, I just need to use the operation that if char is present in set then don't print otherwise print it that's it very very very easy que but I screwed it up just bcoz of nerves ness 
+
+4] why I had too much fear and nervesness? bcoz of last minute prepration, leave any prepration at the day of interview
+any prepration which you want to do just complete it one day before the interview don't stress your prepration till last minute . sleep well on the day of interview eat little less and you are good to go .take deep breathe it will help you reliving stress . just because of lot's of fear and stress I was not able to solve very very very very extreamly easy question, she just asked me 
+given string "aaAbbcghttjjklj" just use set to print the unique chars ignoring the case and don't do any extra processing and very simple ans is 
+int main()
+{
+    string str="aaAbbcghttjjklj";
+    set<char> s;
+    for(char &c : str){
+      if(c<'a') c+=32;
+      if(s.find(c)==s.end())cout<<c;
+      s.insert(c);
+} 
+
+it will print "abcghtjkl" that's it 
+
+aatlo easy que me solve to kari nakhyo to but she just said don't use any extra processing that's where I confused and I got scared to much that I was not even trying to implement this which I was having thought , I knew how to do it but still I was sooo scared and nerveous to even try it. , and stress comes bcoz I was just reading too much material in less time in last minutes just before the interivew that's the only reason if I don't get selected
+
+5] the learning is tcs asks very easy questions even for the experienced ones , online resourses and R&D about what tcs asks in the interview did help me lot bcoz technical and non technical ques were being asked from what online sites had listed and puzzles also being asked . and just don't do last minutes prepration , and to avoid this kind of situation regular revision is the must , revision ,revision , revision is the only only only thing I'm missing that's the only thing bcoz of which I failed in gate , that's the only thing if I'll keep failing in future . just note down hard stuff and keep revising it daily daily daily daily , daily reviison is the must bcoz of which candidates are even cracking DE show , goldman sachs , google and uber what else do you need.
+
+6] my english become scary , to keep hands on the english conversation and speeking skills, reading books is the only way, reading books and the good novels that's the only way .
+
+7] to get motivated to do all this things faster do the gym 
