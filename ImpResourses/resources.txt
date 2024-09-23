@@ -1,1 +1,12 @@
 Leetcode questions and identical patterns : https://github.com/ashishps1/awesome-leetcode-resources
+
+Clean Code: A Handbook of Agile Software
+Craftsmanship by Robert C. Martin
+
+The Pragmatic Programmer: Your Journey to Mastery by Andrew Hunt and David Thomas
+
+Introduction to Algorithms by Thomas H. Cormen
+
+Design Patterns: Elements of Reusable Object-Oriented Software
+
+Designing Data-Intensive Applications by Martin Kleppmann
