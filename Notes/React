@@ -1,4 +1,4 @@
-React used for SPA(single page applications)
+React used for SPA(single page applications) [page does not re-load only affected components will get re-rendered]
 
 How to know if given application built on react or not?
 install react devloper tool chrome extension , and inspect it on given website , if all components are getting listed  , or component tree is showing on that tool that means it's made up from React
