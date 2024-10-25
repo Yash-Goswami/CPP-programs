@@ -15,3 +15,7 @@ JSX
 for normal service files we write code in .js files where only js code will be present
 but for writing react component we will use .jsx files 
 it's just for providing better structure of the project, Although we can write react code in .js files also but just to separate two kind of code we are using two diff set of files, so that whenever new developer comes then he can immediately understand that if he want to debug components or the html structure they it's likely to find in .jsx instead of .js and for service code he can look directly into .js files
+
+
+When you do "npm i package/dependencies" it will not only install that package to your environment but it will also add that dependency into your package.json if not listed already in dependencies section of package.json
+now installing any package is not enough you also have to import it inorder to use that package in your code / service files
