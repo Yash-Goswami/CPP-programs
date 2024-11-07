@@ -19,3 +19,9 @@ it's just for providing better structure of the project, Although we can write r
 
 When you do "npm i package/dependencies" it will not only install that package to your environment but it will also add that dependency into your package.json if not listed already in dependencies section of package.json
 now installing any package is not enough you also have to import it inorder to use that package in your code / service files
+
+
+1. Install: 
+npm i bootstrap@5.3.2
+2. import
+import "bootstrap/dist/css/bootstrap.min.css";
