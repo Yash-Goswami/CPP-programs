@@ -1,2 +1,51 @@
 DRY : Don't Repeat yourself (tamari jaat ne repeat no thava dyo means don't rewrite the same code which you've already written somewhere instead use that code only again and again)
   Ex: inheritance is example of DRY principle where we are re-using paren't code in child classes instead of entirely re-writting the entire code 
+
+Software Design Principles
+-----------------
+Great software isn't just about making things work,
+it's about creating systems that are maintainable, scalable, and resilient.
+These fundamental design principles guide developers toward writing better code.
+
+1. 𝐊𝐈𝐒𝐒 (𝐊𝐞𝐞𝐩 𝐈𝐭 𝐒𝐢𝐦𝐩𝐥𝐞, 𝐒𝐭𝐮𝐩𝐢𝐝)
+➟ The most elegant solutions are often the simplest.
+➟ Avoid unnecessary complexity, keep code clear and concise, and focus on essential features.
+Remember that code is read far more often than it's written.
+
+2. 𝐃𝐑𝐘 (𝐃𝐨𝐧'𝐭 𝐑𝐞𝐩𝐞𝐚𝐭 𝐘𝐨𝐮𝐫𝐬𝐞𝐥𝐟)
+➟ Every piece of knowledge in a system should have a single, unambiguous representation.
+
+3. 𝐘𝐀𝐆𝐍𝐈 (𝐘𝐨𝐮 𝐀𝐢𝐧'𝐭 𝐆𝐨𝐧𝐧𝐚 𝐍𝐞𝐞𝐝 𝐈𝐭)
+➟ Resist implementing features "just in case."
+➟ Build what's needed today.
+
+4. 𝐒𝐎𝐋𝐈𝐃 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞𝐬
+the backbone of object-oriented design:
+➟ Single Responsibility - Classes should do one thing well
+➟ Open/Closed - Open for extension, closed for modification
+➟ Liskov Substitution - Subtypes must be substitutable for their base types
+➟ Interface Segregation - Many specific interfaces beat one general interface
+➟ Dependency Inversion - Depend on abstractions, not concrete implementations
+
+5. 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞 𝐨𝐟 𝐋𝐞𝐚𝐬𝐭 𝐀𝐬𝐭𝐨𝐧𝐢𝐬𝐡𝐦𝐞𝐧𝐭
+➟ Software should behave as users expect.
+➟ Consistency in terminology, conventions, and error messages creates intuitive experiences.
+
+6. 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞 𝐨𝐟 𝐌𝐨𝐝𝐮𝐥𝐚𝐫𝐢𝐭𝐲
+➟ Well-defined, independent modules make systems easier to understand, maintain, and test.
+
+7. 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞 𝐨𝐟 𝐀𝐛𝐬𝐭𝐫𝐚𝐜𝐭𝐢𝐨𝐧
+➟ Hide implementation details to reduce cognitive load.
+➟ Users of your code shouldn't need to know how it works internally, just how to use it.
+
+8. 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞 𝐨𝐟 𝐄𝐧𝐜𝐚𝐩𝐬𝐮𝐥𝐚𝐭𝐢𝐨𝐧
+➟ Protect the internal state of objects from external manipulation.
+➟ This creates more robust systems by preventing unexpected side effects.
+
+9. 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐥𝐞 𝐨𝐟 𝐋𝐞𝐚𝐬𝐭 𝐊𝐧𝐨𝐰𝐥𝐞𝐝𝐠𝐞 (𝐋𝐚𝐰 𝐨𝐟 𝐃𝐞𝐦𝐞𝐭𝐞𝐫)
+➟ Components should have limited knowledge of other components.
+➟ This "need-to-know basis" approach creates more modular, flexible systems.
+
+10. 𝐋𝐨𝐰 𝐂𝐨𝐮𝐩𝐥𝐢𝐧𝐠 & 𝐇𝐢𝐠𝐡 𝐂𝐨𝐡𝐞𝐬𝐢𝐨𝐧
+➟ Minimize dependencies between modules while ensuring each module has a clear, unified purpose.
+➟ This balance makes systems more maintainable and adaptable.
