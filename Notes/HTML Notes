@@ -19,3 +19,11 @@ for english it uses 1 byte of character bcoz english is widely used language , s
 for emojis and all it's using 4 byte structure bcoz it will be of very rare kind of content hence keeping it last(at 4 bytes) 
 jitna chahie utna hi memory use karta hai hence this is the most popular system. 
 
+--------------------------------------------------------------------
+
+if we are hosting our website in AWS then how are our website is getting visible in google search?
+
+so you can host your website in any hosting service, but inorder to apear it in google search , you'll need to index it in google search 
+there are several steps which you need to follow inorder to get your site apear in google search ,
+kai jadu nathi , kai rocket science nathi , badhu connected chhe and aapde e link jodvi pade between our site and google search services. 
+
