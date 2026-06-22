@@ -23,3 +23,56 @@
 20) Why do we use @Qualifier with @Autowired?
 21) Difference between @Controller and @RestController
 22) Difference between SQL and NoSQL
+---------------------------------------------------------------------------------------------
+#Nagarro | Java Backend Developer Interview Experience | 2026
+
+This might help those preparing for similar roles (2–4 years experience).
+
+Core Java & OOP
+→ Explain OOP principles
+→ Difference between Abstract Class and Interface
+→ Difference between final, finally, and finalize
+→ How do you create an immutable object
+→ String vs StringBuilder vs StringBuffer
+→ Types of exceptions in Java
+→ Handling NullPointerException
+
+Java 8 & Best Practices
+→ Handling null checks using Optional
+→ Using validation annotations like @NotNull, @NotBlank
+
+Multithreading & Concurrency
+→ Handling shared resources between threads
+
+Spring Boot & Backend Development
+→ Validating incoming JSON requests
+→ Spring Cloud basics and usage
+→ Exception handling in Spring Boot
+→ @Component vs @Service vs @Repository
+→ Microservices communication
+→ HTTP methods in REST APIs
+→ API versioning
+
+Design & Architecture
+→ SOLID principles
+→ Singleton vs Prototype scope
+→ Dependency Injection
+→ Repository Pattern
+
+Database & Persistence
+→ JPA vs Hibernate
+→ Database connection in Spring Boot
+→ Stored procedures
+→ Query optimization
+→ Lazy vs Eager loading
+
+ Testing & Tools
+→ @Mock vs @MockBean
+→ Git usage
+→ Handling merge conflicts
+→ Jenkins and CI/CD usage
+
+ AI in Development
+→ Usage of AI tools in coding
+→ Pros, cons, and risks
+→ Validating AI-generated code
