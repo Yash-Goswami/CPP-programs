@@ -1,0 +1,25 @@
+1) Two Sum Problem
+2) Sort a list of employees:
+      ->Salary in descending order. If salary is the same, Experience in ascending order
+3) Find the second highest salary
+4) Find the highest salary for each department
+5) What is a Functional Interface?
+6) Difference between Process and Thread?
+7) Different ways to create a Thread and implement using Runnable
+8) What are the pros and cons of:
+          ->Extending Thread class
+          ->Implementing Runnable
+          ->Using ExecutorService
+9) What is ExecutorService?
+10) What is Thread Scope?
+11) What is a Constructor?
+12) Can we have multiple constructors in a class?
+13) Why can't constructors be overridden?
+14) Have you worked on Low-Level Design (LLD)?
+15) Explain the Factory Design Pattern
+16) Explain the Observer Design Pattern
+17) What is @SpringBootApplication?
+19) Explain the annotations inside @SpringBootApplication
+20) Why do we use @Qualifier with @Autowired?
+21) Difference between @Controller and @RestController
+22) Difference between SQL and NoSQL
